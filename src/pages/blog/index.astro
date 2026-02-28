@@ -22,7 +22,7 @@ const posts = (await getCollection('blog')).sort(
 			{
 				posts.map((post) => (
 					<li>
-						<BlogCard post={post} />
+						<BlogCard heading="h2" post={post} />
 					</li>
 				))
 			}

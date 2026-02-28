@@ -40,7 +40,7 @@ const posts = (await getCollection('blog'))
 	<section class="app-container">
 		<h2 class="section-title">Recent Posts</h2>
 		<div class="posts-grid-container">
-			{posts.map((post) => <BlogCard post={post} />)}
+			{posts.map((post) => <BlogCard heading="h3" post={post} />)}
 		</div>
 		<a class="btn-secondary" href={`${SITE_BASE}/blog`}
 			>Read All
