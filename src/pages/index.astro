@@ -27,7 +27,7 @@ const posts = (await getCollection('blog'))
 					<a
 						class="text-xl text-primary dark:text-primary-dark underline hover:underline underline-offset-4"
 						href={link.url}
-						target="_blank"
+						rel="noreferrer"
 					>
 						{link.name}
 					</a>
@@ -67,18 +67,14 @@ const posts = (await getCollection('blog'))
 				Use the buttons below for my resume & email.
 			</p>
 			<div class="flex flex-wrap mt-auto space-x-4">
-				<a
-					class="btn-primary"
-					href="mailto:lewinmarkus@gmail.com"
-					download
-					target="_blank"
+				<a class="btn-primary" href="mailto:lewinmarkus@gmail.com"
 					>Get in touch
 					<Icon height={20} name="mdi:email" />
 				</a>
-				<a class="btn-secondary" href="https://example.com" target="_blank"
+				<!-- <a class="btn-secondary" href="https://example.com" target="_blank"
 					>Download Resume
 					<Icon height={20} name="mdi:arrow-collapse-down" />
-				</a>
+				</a> -->
 			</div>
 		</div>
 	</section>

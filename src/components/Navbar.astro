@@ -15,11 +15,7 @@ import LogoSVG from '../assets/logo.svg'
 			<div class="gap-8 hidden md:flex items-center">
 				{
 					WebsiteLinks.map((link) => (
-						<NavbarLink
-							class="text-lg"
-							href={`${SITE_BASE}/${link.url}`}
-							target={link.url.charAt(0) === 'h' ? '_blank' : '_self'}
-						>
+						<NavbarLink class="text-lg" href={`${SITE_BASE}/${link.url}`}>
 							{link.name}
 						</NavbarLink>
 					))

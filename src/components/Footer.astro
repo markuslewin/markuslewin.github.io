@@ -20,12 +20,7 @@ const today = new Date()
 			<div class="flex flex-wrap gap-4 mt-4">
 				{
 					WebsiteLinks.filter((link) => link.name !== 'Home').map((link) => (
-						<a
-							class="text-lg"
-							href={link.url}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
+						<a class="text-lg" href={link.url}>
 							{link.name}
 						</a>
 					))
@@ -37,12 +32,7 @@ const today = new Date()
 			<div class="flex flex-wrap gap-4 mt-4">
 				{
 					SocialLinks.map((link) => (
-						<a
-							class="text-lg"
-							href={link.url}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
+						<a class="text-lg" href={link.url} rel="noreferrer">
 							{link.name}
 						</a>
 					))
