@@ -25,7 +25,7 @@ html {
 }
 
 #mobile-menu.mobile-nav-open {
-	@apply translate-x-0 shadow-xl/30;
+	@apply translate-x-0 shadow-xl/30 visible;
 }
 
 .btn-primary {

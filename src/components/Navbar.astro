@@ -7,73 +7,109 @@ import LogoSVG from '../assets/logo.svg'
 ---
 
 <header class="fixed top-0 w-full z-40 bg-background dark:bg-background-dark">
-	<nav class="">
-		<div class="app-container flex justify-between items-center py-5">
-			<a href={`${SITE_BASE}/`} aria-label="Home">
-				<LogoSVG height={36} width={36} />
-			</a>
-			<div class="gap-8 hidden md:flex items-center">
-				{
-					WebsiteLinks.map((link) => (
-						<NavbarLink class="text-lg" href={`${SITE_BASE}/${link.url}`}>
-							{link.name}
-						</NavbarLink>
-					))
-				}
-				<ThemeSelector />
-			</div>
-			<button
-				class="md:hidden cursor-pointer"
-				id="nav-open-btn"
-				aria-label="Open navigation menu"
-				title="Open navigation menu"
-			>
-				<Icon aria-hidden name="mdi:menu" size={32} />
-			</button>
-
-			<!-- Mobile nav -->
-			<div
-				class="translate-x-full md:hidden fixed top-0 right-0 bg-background dark:bg-background-dark h-screen w-5/6 px-8 py-6 transition-transform z-40 border-l-[1px] border-background"
-				id="mobile-menu"
-			>
-				<button
-					id="nav-close-btn"
-					class="ml-auto block cursor-pointer"
-					aria-label="Close navigation menu"
-					title="Close navigation menu"
-				>
-					<Icon aria-hidden name="mdi:close" size={32} />
-				</button>
-				<div class="flex flex-col h-full items-start gap-8 pt-16">
+	<div class="app-container flex justify-between items-center py-5">
+		<a href={`${SITE_BASE}/`} aria-label="Home">
+			<LogoSVG height={36} width={36} />
+		</a>
+		<div class="gap-8 hidden md:flex items-center" role="list">
+			<nav>
+				<ul class="gap-8 flex items-center" role="list">
 					{
 						WebsiteLinks.map((link) => (
-							<NavbarLink
-								class="text-4xl font-light"
-								href={`${SITE_BASE}/${link.url}`}
-							>
-								{link.name}
-							</NavbarLink>
+							<li>
+								<NavbarLink class="text-lg" href={`${SITE_BASE}/${link.url}`}>
+									{link.name}
+								</NavbarLink>
+							</li>
 						))
 					}
-					<ThemeSelector class:list="mt-4" />
-				</div>
+				</ul>
+			</nav>
+			<ThemeSelector />
+		</div>
+		<button
+			class="md:hidden cursor-pointer"
+			id="nav-open-btn"
+			aria-label="Open navigation menu"
+		>
+			<Icon aria-hidden name="mdi:menu" size={32} />
+		</button>
+
+		<!-- Mobile nav -->
+		<div
+			class="invisible translate-x-full md:hidden fixed top-0 right-0 bg-background dark:bg-background-dark h-screen w-5/6 px-8 py-6 transition-transform z-40 border-l-[1px] border-background"
+			id="mobile-menu"
+		>
+			<button
+				id="nav-close-btn"
+				class="ml-auto block cursor-pointer"
+				aria-label="Close navigation menu"
+			>
+				<Icon aria-hidden name="mdi:close" size={32} />
+			</button>
+			<div class="flex flex-col items-start gap-8 pt-16">
+				<nav>
+					<ul class="flex flex-col items-start gap-8">
+						{
+							WebsiteLinks.map((link) => (
+								<li>
+									<NavbarLink
+										class="text-4xl font-light"
+										href={`${SITE_BASE}/${link.url}`}
+									>
+										{link.name}
+									</NavbarLink>
+								</li>
+							))
+						}
+					</ul>
+				</nav>
+				<ThemeSelector class:list="mt-4" />
 			</div>
 		</div>
-	</nav>
+	</div>
 
 	<script>
-		function toggleNav() {
-			document
-				.querySelector('#mobile-menu')
-				?.classList.toggle('mobile-nav-open')
+		const navOpenBtn = document.getElementById('nav-open-btn')
+		const navCloseBtn = document.getElementById('nav-close-btn')
+		const mobileMenu = document.getElementById('mobile-menu')
+
+		const closeMenu = () => {
+			mobileMenu?.classList.remove('mobile-nav-open')
 		}
 
-		document
-			.querySelector('#nav-open-btn')
-			?.addEventListener('click', toggleNav)
-		document
-			.querySelector('#nav-close-btn')
-			?.addEventListener('click', toggleNav)
+		navOpenBtn?.addEventListener('click', () => {
+			mobileMenu?.classList.add('mobile-nav-open')
+			navCloseBtn?.focus()
+		})
+
+		navCloseBtn?.addEventListener('click', () => {
+			closeMenu()
+			navOpenBtn?.focus()
+		})
+
+		mobileMenu?.addEventListener('keyup', (e) => {
+			if (e.key === 'Escape') {
+				closeMenu()
+				navOpenBtn?.focus()
+			}
+		})
+
+		document.addEventListener('focusin', () => {
+			if (!mobileMenu?.contains(document.activeElement)) {
+				closeMenu()
+			}
+		})
+
+		document.addEventListener('click', (e) => {
+			if (!(e.target instanceof Node)) {
+				return
+			}
+
+			if (!navOpenBtn?.contains(e.target) && !mobileMenu?.contains(e.target)) {
+				closeMenu()
+			}
+		})
 	</script>
 </header>
 
