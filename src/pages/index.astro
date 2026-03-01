@@ -11,7 +11,7 @@ const posts = (await getCollection('blog'))
 ---
 
 <BaseLayout>
-	<main
+	<div
 		class="app-container flex flex-col gap-12 justify-center py-36 md:py-48 pt-44 md:pt-56 relative"
 	>
 		<div>
@@ -34,10 +34,10 @@ const posts = (await getCollection('blog'))
 				))
 			}
 		</div>
-	</main>
+	</div>
 
 	<!-- Recent Posts Section -->
-	<section class="app-container">
+	<div class="app-container">
 		<h2 class="section-title">Recent Posts</h2>
 		<div class="posts-grid-container">
 			{posts.map((post) => <BlogCard heading="h3" post={post} />)}
@@ -46,10 +46,10 @@ const posts = (await getCollection('blog'))
 			>Read All
 			<Icon size={20} name="mdi:arrow-right" />
 		</a>
-	</section>
+	</div>
 
 	<!-- Recent Posts Section -->
-	<section class="app-container py-42 grid lg:grid-cols-2 gap-28 lg:gap-10">
+	<div class="app-container py-42 grid lg:grid-cols-2 gap-28 lg:gap-10">
 		<div class="space-y-6">
 			<h2 class="section-title">About Me</h2>
 			<p class="text-lg max-w-xl pb-4">
@@ -77,5 +77,5 @@ const posts = (await getCollection('blog'))
 				</a> -->
 			</div>
 		</div>
-	</section>
+	</div>
 </BaseLayout>

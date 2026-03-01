@@ -36,7 +36,9 @@ import '@fontsource-variable/jetbrains-mono'
 		class="text-foreground bg-background font-light dark:text-foreground-dark dark:bg-background-dark transition-colors"
 	>
 		<Navbar title={SITE_TITLE} />
-		<slot />
+		<main>
+			<slot />
+		</main>
 		<Footer />
 	</body>
 </html>
