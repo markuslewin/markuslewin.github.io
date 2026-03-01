@@ -22,9 +22,8 @@ const blogImages = import.meta.glob<{ default: ImageMetadata }>(
 const coverImagePath = `/src/assets/blogimages/${post.slug}/cover.jpg`
 ---
 
-<a
-	href={`${SITE_BASE}/blog/${post.slug}/`}
-	class="flex flex-col gap-4 pb-8 h-full group transition-colors"
+<div
+	class="flex flex-col gap-4 pb-8 h-full group transition-colors relative isolate"
 >
 	{
 		blogImages[coverImagePath] && (
@@ -38,7 +37,12 @@ const coverImagePath = `/src/assets/blogimages/${post.slug}/cover.jpg`
 	<Heading
 		class="text-2xl font-semibold group-hover:text-primary dark:group-hover:text-primary-dark group-hover:underline transition-colors"
 	>
-		{post.data.title}
+		<a
+			class="before:absolute before:inset-0 before:z-10"
+			href={`${SITE_BASE}/blog/${post.slug}/`}
+		>
+			{post.data.title}
+		</a>
 	</Heading>
 	<p class="line-clamp-3 opacity-80">
 		{post.data.description}
@@ -46,4 +50,4 @@ const coverImagePath = `/src/assets/blogimages/${post.slug}/cover.jpg`
 	<p class="uppercase text-sm mt-auto tracking-tight">
 		<FormattedDate date={post.data.pubDate} />
 	</p>
-</a>
+</div>
