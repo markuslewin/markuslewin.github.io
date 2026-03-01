@@ -3,16 +3,16 @@ import { Icon } from 'astro-icon/components'
 const { class: className } = Astro.props
 ---
 
-<div
+<fieldset
 	class:list={[
 		className,
 		'border-[1px] border-foreground dark:border-foreground-dark rounded-full flex justify-center items-center text-foreground dark:text-foreground-dark [&>*:hover]:brightness-75 md:opacity-80 [&>*]:cursor-pointer',
 	]}
 >
+	<legend class="sr-only">Select theme</legend>
 	<button
 		data-theme="theme-auto"
-		aria-label="Auto Theme"
-		title="Set theme to follow system preference"
+		aria-label="System"
 		class="theme-button theme-auto"
 	>
 		<Icon
@@ -23,8 +23,7 @@ const { class: className } = Astro.props
 	</button>
 	<button
 		data-theme="theme-light"
-		aria-label="Light Theme"
-		title="Set theme to light"
+		aria-label="Light"
 		class="theme-button theme-light"
 	>
 		<Icon
@@ -35,8 +34,7 @@ const { class: className } = Astro.props
 	</button>
 	<button
 		data-theme="theme-dark"
-		aria-label="Dark Theme"
-		title="Set theme to dark"
+		aria-label="Dark"
 		class="theme-button theme-dark"
 	>
 		<Icon
@@ -45,7 +43,7 @@ const { class: className } = Astro.props
 			aria-hidden
 		/>
 	</button>
-</div>
+</fieldset>
 
 <style>
 	@reference "../styles/global.css";

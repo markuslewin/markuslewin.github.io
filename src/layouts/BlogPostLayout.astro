@@ -49,61 +49,61 @@ const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
 				<TableOfContents headings={headings} />
 			</div>
 		</div>
-		<div class="grow w-full md:max-w-[75ch]">
-			<div>
+		<section class="grow w-full md:max-w-[75ch]" aria-label="Post">
+			<header>
 				<h1 class="text-4xl sm:text-5xl leading-snug pt-12 font-bold">
 					{title}
 				</h1>
 				<div class="text-lg flex items-center gap-4 flex-wrap py-8">
 					<!-- Publish date -->
-					<span>
+					<p>
 						<Icon
 							name="mdi:calendar-month-outline"
 							class="inline-block text-primary dark:text-primary-dark"
 						/>
 						<FormattedDate date={pubDate} />
-					</span>
+					</p>
 
 					<!-- Updated date -->
 					{
 						updatedDate && (
-							<span>
+							<p>
 								<Icon
 									name="mdi:calendar-refresh-outline"
 									class="inline-block text-primary dark:text-primary-dark"
 								/>
 								Last updated on <FormattedDate date={updatedDate} />
-							</span>
+							</p>
 						)
 					}
 
 					<!-- Read time -->
-					<span>
+					<p>
 						<Icon
 							name="mdi:clock-time-four-outline"
 							class="inline-block text-primary dark:text-primary-dark"
 						/>
 						{remarkPluginFrontmatter.minutesRead}
-					</span>
+					</p>
 				</div>
 
 				{
 					blogImages[coverImagePath] && (
-						<>
+						<figure>
 							<Image
 								src={blogImages[coverImagePath]()}
 								alt={title}
 								class="rounded-lg"
 							/>
 							{coverImageCredit && (
-								<p class="mt-2 mb-8 opacity-80 italic text-sm">
+								<figcaption class="mt-2 mb-8 opacity-80 italic text-sm">
 									Image Credit: {coverImageCredit}
-								</p>
+								</figcaption>
 							)}
-						</>
+						</figure>
 					)
 				}
-			</div>
+			</header>
 			<div
 				class="prose prose-neutral prose-lg md:prose-xl dark:prose-invert prose-img:rounded-xl prose-figure:text-center prose-img:mx-auto"
 			>
@@ -111,7 +111,7 @@ const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
 			</div>
 
 			<!-- Suggest edit -->
-			<div class="flex justify-between mt-16 gap-4 flex-wrap italic">
+			<footer class="flex justify-between mt-16 gap-4 flex-wrap italic">
 				<a
 					href={`https://github.com/markuslewin/markuslewin.github.io/edit/main/src/content/blog/${slug}.md`}
 					rel="noreferrer"
@@ -122,7 +122,7 @@ const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
 				<p class="opacity-70">
 					Last modified: {lastModified}
 				</p>
-			</div>
-		</div>
+			</footer>
+		</section>
 	</div>
 </BaseLayout>

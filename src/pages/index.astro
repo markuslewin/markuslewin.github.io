@@ -21,19 +21,21 @@ const posts = (await getCollection('blog'))
 		<p class="text-2xl max-w-2xl font-light leading-normal">
 			A simple theme for personal blog sites, created for Astro framework.
 		</p>
-		<div class="flex flex-wrap gap-8">
+		<ul class="flex flex-wrap gap-8" role="list">
 			{
 				SocialLinks.map((link) => (
-					<a
-						class="text-xl text-primary dark:text-primary-dark underline hover:underline underline-offset-4"
-						href={link.url}
-						rel="noreferrer"
-					>
-						{link.name}
-					</a>
+					<li>
+						<a
+							class="text-xl text-primary dark:text-primary-dark underline hover:underline underline-offset-4"
+							href={link.url}
+							rel="noreferrer"
+						>
+							{link.name}
+						</a>
+					</li>
 				))
 			}
-		</div>
+		</ul>
 	</div>
 
 	<!-- Recent Posts Section -->
@@ -42,8 +44,8 @@ const posts = (await getCollection('blog'))
 		<div class="posts-grid-container">
 			{posts.map((post) => <BlogCard heading="h3" post={post} />)}
 		</div>
-		<a class="btn-secondary" href={`${SITE_BASE}/blog`}
-			>Read All
+		<a class="btn-secondary" href={`${SITE_BASE}/blog`}>
+			Read All
 			<Icon size={20} name="mdi:arrow-right" />
 		</a>
 	</div>
@@ -56,8 +58,8 @@ const posts = (await getCollection('blog'))
 				A brief introduction about yourself. You can include your profession,
 				hobbies, interests, or anything you'd like visitors to know about you.
 			</p>
-			<a class="btn-secondary" href={`${SITE_BASE}/about`}
-				>Go to About
+			<a class="btn-secondary" href={`${SITE_BASE}/about`}>
+				Go to About
 				<Icon size={20} name="mdi:arrow-right" />
 			</a>
 		</div>
@@ -67,8 +69,8 @@ const posts = (await getCollection('blog'))
 				Use the buttons below for my resume & email.
 			</p>
 			<div class="flex flex-wrap mt-auto space-x-4">
-				<a class="btn-primary" href="mailto:lewinmarkus@gmail.com"
-					>Get in touch
+				<a class="btn-primary" href="mailto:lewinmarkus@gmail.com">
+					Get in touch
 					<Icon height={20} name="mdi:email" />
 				</a>
 				<!-- <a class="btn-secondary" href="https://example.com" target="_blank"
