@@ -18,7 +18,7 @@ const posts = (await getCollection('blog')).sort(
 		</p>
 	</div>
 	<div class="app-container py-12">
-		<ul class="posts-grid-container">
+		<ul class="posts-grid-container" role="list">
 			{
 				posts.map((post) => (
 					<li>

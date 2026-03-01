@@ -11,7 +11,7 @@ import LogoSVG from '../assets/logo.svg'
 		<a href={`${SITE_BASE}/`} aria-label="Home">
 			<LogoSVG height={36} width={36} />
 		</a>
-		<div class="gap-8 hidden md:flex items-center" role="list">
+		<div class="gap-8 hidden md:flex items-center">
 			<nav>
 				<ul class="gap-8 flex items-center" role="list">
 					{
@@ -49,7 +49,7 @@ import LogoSVG from '../assets/logo.svg'
 			</button>
 			<div class="flex flex-col items-start gap-8 pt-16">
 				<nav>
-					<ul class="flex flex-col items-start gap-8">
+					<ul class="flex flex-col items-start gap-8" role="list">
 						{
 							WebsiteLinks.map((link) => (
 								<li>
