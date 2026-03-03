@@ -89,7 +89,7 @@ const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
 
 				{
 					blogImages[coverImagePath] && (
-						<figure>
+						<figure class="mb-8">
 							<Image
 								class="rounded-lg"
 								alt={title}
@@ -97,7 +97,7 @@ const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
 								src={blogImages[coverImagePath]()}
 							/>
 							{coverImageCredit && (
-								<figcaption class="mt-2 mb-8 opacity-80 italic text-sm">
+								<figcaption class="mt-2 opacity-80 italic text-sm">
 									Image Credit: {coverImageCredit}
 								</figcaption>
 							)}
