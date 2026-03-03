@@ -19,6 +19,10 @@ export const SocialLinks = [
 		name: 'LinkedIn',
 		url: '#',
 	},
+	{
+		name: 'Frontend Mentor',
+		url: 'https://www.frontendmentor.io/profile/markuslewin',
+	},
 ]
 
 export const WebsiteLinks = [
