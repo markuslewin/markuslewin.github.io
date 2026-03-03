@@ -4,7 +4,6 @@ description: |
   Uncovering the hidden, dramatic social order governed by the CSS z-index property.
   From the humble static div to the tyrannical modal overlay, every element knows its place.
 pubDate: 'Mar 03 2026'
-# coverImageCredit: 'Evgeni Tcherkasski, Unsplash'
 ---
 
 To save time during development, I like automating deployments using GitHub Actions. When I merge code into the main branch, a workflow provisions the required Azure resources. Then, the workflow deploys the app to those resources.
