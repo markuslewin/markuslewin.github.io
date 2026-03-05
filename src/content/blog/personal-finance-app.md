@@ -12,7 +12,7 @@ I built this finance app:
   <video controls>
     <source src="/personal-finance-app/demo.mp4" />
   </video>
-  <figcaption>My finance app.</figcaption>
+  <figcaption>A finance app I built.</figcaption>
 </figure>
 
 The app is a user interface for a payment system. Users can see transactions related to their account. They can also create budgets to track expenses. They can add money to pots to track progress toward their goals.
