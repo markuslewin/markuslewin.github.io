@@ -1,9 +1,9 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-import { SITE_BASE, SocialLinks } from '../consts'
 import { Icon } from 'astro-icon/components'
-import BlogCard from '../components/BlogCard.astro'
 import { getCollection } from 'astro:content'
+import BlogCard from '../components/BlogCard.astro'
+import { SocialLinks, internalHref } from '../consts'
+import BaseLayout from '../layouts/BaseLayout.astro'
 
 const posts = (await getCollection('blog'))
 	.sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
@@ -44,7 +44,7 @@ const posts = (await getCollection('blog'))
 		<div class="posts-grid-container">
 			{posts.map((post) => <BlogCard heading="h3" post={post} />)}
 		</div>
-		<a class="btn-secondary" href={`${SITE_BASE}/blog`}>
+		<a class="btn-secondary" href={internalHref('/blog')}>
 			Read All
 			<Icon size={20} name="mdi:arrow-right" />
 		</a>
@@ -58,7 +58,7 @@ const posts = (await getCollection('blog'))
 				A brief introduction about yourself. You can include your profession,
 				hobbies, interests, or anything you'd like visitors to know about you.
 			</p>
-			<a class="btn-secondary" href={`${SITE_BASE}/about`}>
+			<a class="btn-secondary" href={internalHref('/about')}>
 				Go to About
 				<Icon size={20} name="mdi:arrow-right" />
 			</a>
@@ -73,10 +73,10 @@ const posts = (await getCollection('blog'))
 					Get in touch
 					<Icon height={20} name="mdi:email" />
 				</a>
-				<!-- <a class="btn-secondary" href="https://example.com" target="_blank"
-					>Download Resume
-					<Icon height={20} name="mdi:arrow-collapse-down" />
-				</a> -->
+				<a class="btn-secondary" href={internalHref('/resume.pdf')}>
+					Go to Resume
+					<Icon size={20} name="mdi:arrow-right" />
+				</a>
 			</div>
 		</div>
 	</div>

@@ -10,6 +10,8 @@ export const SITE_DESCRIPTION =
 // Leave it as an empty string if you are deploying to a root domain (e.g. example.com)
 export const SITE_BASE = ''
 
+export const internalHref = (pathname: string) => `${SITE_BASE}${pathname}`
+
 export const SocialLinks = [
 	{
 		name: 'GitHub',
