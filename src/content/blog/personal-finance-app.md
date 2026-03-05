@@ -3,7 +3,7 @@ title: 'Progressive Enhancement in a Finance App'
 description: |
   Uncovering the hidden, dramatic social order governed by the CSS z-index property.
   From the humble static div to the tyrannical modal overlay, every element knows its place.
-pubDate: 'Mar 03 2026'
+publishedAt: '2026-03-05T00:00+00:00'
 ---
 
 I built this finance app:

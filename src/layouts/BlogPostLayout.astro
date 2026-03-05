@@ -17,7 +17,7 @@ type Props = CollectionEntry<'blog'>['data'] & {
 const {
 	title,
 	description,
-	pubDate,
+	publishedAt,
 	updatedDate,
 	coverImageCredit,
 	headings,
@@ -61,7 +61,7 @@ const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
 							name="mdi:calendar-month-outline"
 							class="inline-block text-primary dark:text-primary-dark"
 						/>
-						<FormattedDate date={pubDate} />
+						<FormattedDate date={publishedAt} />
 					</p>
 
 					<!-- Updated date -->
