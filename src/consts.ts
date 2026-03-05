@@ -17,7 +17,7 @@ export const SocialLinks = [
 	},
 	{
 		name: 'LinkedIn',
-		url: '#',
+		url: 'https://www.linkedin.com/in/markus-lewin-32419321b/',
 	},
 	{
 		name: 'Frontend Mentor',
