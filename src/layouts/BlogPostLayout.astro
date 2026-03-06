@@ -1,10 +1,14 @@
 ---
+import { SITE_TITLE } from '@/consts'
+import type { ImageMetadata, MarkdownHeading } from 'astro'
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
-import FormattedDate from '../components/FormattedDate.astro'
-import type { MarkdownHeading, ImageMetadata } from 'astro'
-import TableOfContents from '../components/TableOfContents.astro'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
+import FormattedDate from '../components/FormattedDate.astro'
+import TableOfContents from '../components/TableOfContents.astro'
+import BaseLayout from './BaseLayout.astro'
 
 dayjs.extend(utc)
 
@@ -25,10 +29,6 @@ const {
 	remarkPluginFrontmatter,
 } = Astro.props
 
-import BaseLayout from './BaseLayout.astro'
-import { Image } from 'astro:assets'
-import { Icon } from 'astro-icon/components'
-
 const blogImages = import.meta.glob<{ default: ImageMetadata }>(
 	'/src/assets/blogimages/**/*.{jpeg,jpg,png,gif}'
 )
@@ -40,7 +40,7 @@ const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
 	.format('D MMM YYYY')
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={`${title} | ${SITE_TITLE}`} description={description}>
 	<div
 		class="app-container flex flex-col lg:flex-row-reverse justify-between gap-8 py-24 relative"
 	>

@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon/components'
 import { getCollection } from 'astro:content'
 import BlogCard from '../components/BlogCard.astro'
-import { SocialLinks, internalHref } from '../consts'
+import { SITE_TITLE, SocialLinks, internalHref } from '../consts'
 import BaseLayout from '../layouts/BaseLayout.astro'
 
 const posts = (await getCollection('blog')).sort(
@@ -10,7 +10,7 @@ const posts = (await getCollection('blog')).sort(
 )
 ---
 
-<BaseLayout>
+<BaseLayout title={`Home | ${SITE_TITLE}`}>
 	<div
 		class="app-container flex flex-col gap-12 justify-center py-36 md:py-48 pt-44 md:pt-56 relative"
 	>

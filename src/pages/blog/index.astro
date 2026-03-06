@@ -1,4 +1,5 @@
 ---
+import { SITE_TITLE } from '@/consts'
 import { getCollection } from 'astro:content'
 import BlogCard from '../../components/BlogCard.astro'
 import BaseLayout from '../../layouts/BaseLayout.astro'
@@ -8,7 +9,7 @@ const posts = (await getCollection('blog')).sort(
 )
 ---
 
-<BaseLayout>
+<BaseLayout title={`Blog | ${SITE_TITLE}`}>
 	<div class="app-container pt-36">
 		<h1 class="text-6xl pb-8 font-bold">Blog</h1>
 	</div>

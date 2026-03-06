@@ -1,9 +1,9 @@
 ---
+import { SITE_BASE, SITE_TITLE } from '../consts'
 import BaseLayout from '../layouts/BaseLayout.astro'
-import { SITE_BASE } from '../consts'
 ---
 
-<BaseLayout>
+<BaseLayout title={`404 | ${SITE_TITLE}`}>
 	<div
 		class="app-container h-[95vh] flex flex-col gap-6 justify-center py-56 items-center"
 	>
