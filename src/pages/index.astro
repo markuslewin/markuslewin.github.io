@@ -5,9 +5,9 @@ import BlogCard from '../components/BlogCard.astro'
 import { SocialLinks, internalHref } from '../consts'
 import BaseLayout from '../layouts/BaseLayout.astro'
 
-const posts = (await getCollection('blog'))
-	.sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
-	.slice(0, 4)
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()
+)
 ---
 
 <BaseLayout>
@@ -42,15 +42,19 @@ const posts = (await getCollection('blog'))
 	<div class="app-container">
 		<h2 class="section-title">Recent Posts</h2>
 		<div class="posts-grid-container">
-			{posts.map((post) => <BlogCard heading="h3" post={post} />)}
+			{posts.slice(0, 4).map((post) => <BlogCard heading="h3" post={post} />)}
 		</div>
-		<a class="btn-secondary" href={internalHref('/blog')}>
-			Read All
-			<Icon size={20} name="mdi:arrow-right" />
-		</a>
+		{
+			posts.length > 4 ? (
+				<a class="btn-secondary" href={internalHref('/blog')}>
+					Read All
+					<Icon size={20} name="mdi:arrow-right" />
+				</a>
+			) : null
+		}
 	</div>
 
-	<!-- Recent Posts Section -->
+	<!-- Contact Section -->
 	<div class="app-container py-42 grid lg:grid-cols-2 gap-28 lg:gap-10">
 		<div class="space-y-6">
 			<h2 class="section-title">About Me</h2>
