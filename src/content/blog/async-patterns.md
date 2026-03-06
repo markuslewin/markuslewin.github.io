@@ -53,6 +53,8 @@ Ryan mentions four patterns of async consistency:
 
 The following table describes the behavior of the values for each pattern:
 
+<div class="overflow-x-auto">
+
 | Name             | Value A | Value B |
 | ---------------- | ------- | ------- |
 | Hold in the Past | Stale   | Stale   |
@@ -60,7 +62,11 @@ The following table describes the behavior of the values for each pattern:
 | Tear             | Updated | Stale   |
 | Show the Future  | Updated | Updated |
 
+</div>
+
 If we see "Value A" as `count` and "Value B" as `doubleCount`, we can add a new column. This column will show how our UI looks after the user increments the value of `count`:
+
+<div class="overflow-x-auto">
 
 | Name             | `count` | `doubleCount` | UI                   |
 | ---------------- | ------- | ------------- | -------------------- |
@@ -68,6 +74,8 @@ If we see "Value A" as `count` and "Value B" as `doubleCount`, we can add a new 
 | Show Placeholder | Updated | None          | `1 * 2 = Loading...` |
 | Tear             | Updated | Stale         | `1 * 2 = 0`          |
 | Show the Future  | Updated | Updated       | `1 * 2 = 2`          |
+
+</div>
 
 This simple example highlights the [main characteristics of each pattern](https://www.youtube.com/live/eZAcJc_eR1M?si=UMlzzUp7PEcibYwT&t=1279).
 
