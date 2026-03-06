@@ -1,8 +1,7 @@
 ---
-title: 'Streaming a Weather App in React Router'
+title: 'Streaming a Weather App with React Router'
 description: |
-  Uncovering the hidden, dramatic social order governed by the CSS z-index property.
-  From the humble static div to the tyrannical modal overlay, every element knows its place.
+  Enhancing the performance and user experience by streaming weather data to the browser.
 publishedAt: '2026-03-05T00:03+00:00'
 ---
 

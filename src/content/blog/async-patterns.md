@@ -1,8 +1,7 @@
 ---
-title: 'Async UI with React'
+title: 'Async UI patterns with React'
 description: |
-  Uncovering the hidden, dramatic social order governed by the CSS z-index property.
-  From the humble static div to the tyrannical modal overlay, every element knows its place.
+  Exploring the new primitives for async work in modern React.
 publishedAt: '2026-03-05T00:02+00:00'
 ---
 

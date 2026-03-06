@@ -1,8 +1,7 @@
 ---
 title: 'Provision a Workflow Identity using Bicep'
 description: |
-  Uncovering the hidden, dramatic social order governed by the CSS z-index property.
-  From the humble static div to the tyrannical modal overlay, every element knows its place.
+  Provisioning a GitHub Actions workflow identity with the necessary permissions using Bicep.
 publishedAt: '2026-03-05T00:01+00:00'
 ---
 
