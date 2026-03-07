@@ -5,6 +5,19 @@ description: |
 publishedAt: '2026-03-05T00:00+00:00'
 ---
 
+<dl>
+	<dt>Live site</dt>
+	<dd>
+		<a href="https://personal-finance-app-dwaha0h3bjhab3gr.swedencentral-01.azurewebsites.net/" rel="noreferrer">Personal Finance App</a>
+	</dd>
+	<dt>Code repository</dt>
+	<dd>
+		<a href="https://github.com/markuslewin/personal-finance-app" rel="noreferrer">markuslewin/personal-finance-app</a>
+	</dd>
+</dl>
+
+---
+
 I built this finance app:
 
 <figure>

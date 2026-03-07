@@ -5,6 +5,19 @@ description: |
 publishedAt: '2026-03-05T00:03+00:00'
 ---
 
+<dl>
+	<dt>Live site</dt>
+	<dd>
+		<a href="https://kaleidoscopic-twilight-d04dc1.netlify.app/" rel="noreferrer">Weather App</a>
+	</dd>
+	<dt>Code repository</dt>
+	<dd>
+		<a href="https://github.com/markuslewin/weather-app" rel="noreferrer">markuslewin/weather-app</a>
+	</dd>
+</dl>
+
+---
+
 This is a weather app I built recently:
 
 <figure>
@@ -160,7 +173,7 @@ To use the Azure Maps API, I had to provision an "Azure Maps Account" in Azure. 
 
 This was easier than I expected. I finally have a solid understanding of service principals and permissions in Azure.
 
-### Settings
+### The Settings
 
 The app also lets the user decide in which units to display the weather data.
 
@@ -188,7 +201,7 @@ export default function Layout({ loaderData }: Route.ComponentProps) {
 }
 ```
 
-### Hourly Forecast Filter
+### The Hourly Forecast Filter
 
 Lately, I have been thinking about [async UI and affordances](/blog/async-patterns/). In this project, the UI is showing placeholders while the data is loading for the first time. The app holds the UI in the past when the user navigates to a new location. The UI tears when showing suggestions for the search field.
 
