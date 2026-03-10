@@ -18,7 +18,6 @@
 		"@astrojs/sitemap": "^3.7.1",
 		"@fontsource-variable/inter": "^5.2.8",
 		"@fontsource-variable/jetbrains-mono": "^5.2.8",
-		"@fontsource/silkscreen": "^5.2.8",
 		"@iconify-json/mdi": "^1.2.3",
 		"@tailwindcss/vite": "^4.2.1",
 		"astro": "^6.0.1",
