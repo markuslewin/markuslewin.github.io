@@ -13,15 +13,15 @@
 		"format:check": "prettier --check ."
 	},
 	"dependencies": {
-		"@astrojs/check": "^0.9.6",
-		"@astrojs/mdx": "^4.3.13",
-		"@astrojs/sitemap": "^3.7.0",
+		"@astrojs/check": "^0.9.7",
+		"@astrojs/mdx": "^5.0.0",
+		"@astrojs/sitemap": "^3.7.1",
 		"@fontsource-variable/inter": "^5.2.8",
 		"@fontsource-variable/jetbrains-mono": "^5.2.8",
 		"@fontsource/silkscreen": "^5.2.8",
 		"@iconify-json/mdi": "^1.2.3",
 		"@tailwindcss/vite": "^4.2.1",
-		"astro": "^5.18.0",
+		"astro": "^6.0.1",
 		"astro-icon": "^1.1.5",
 		"dayjs": "^1.11.19",
 		"mdast-util-to-string": "^4.0.0",
@@ -31,7 +31,7 @@
 		"typescript": "^5.9.3"
 	},
 	"devDependencies": {
-		"@astrojs/partytown": "^2.1.4",
+		"@astrojs/partytown": "^2.1.5",
 		"@eslint/js": "^9.33.0",
 		"@tailwindcss/typography": "^0.5.19",
 		"@typescript-eslint/eslint-plugin": "^8.39.1",
