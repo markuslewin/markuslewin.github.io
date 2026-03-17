@@ -40,6 +40,6 @@
 		"prettier": "^3.8.1",
 		"prettier-plugin-astro": "^0.14.1",
 		"rehype-accessible-emojis": "^0.3.2",
-		"typescript-eslint": "^8.57.0"
+		"typescript-eslint": "^8.57.1"
 	}
 }
