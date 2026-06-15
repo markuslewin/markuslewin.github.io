@@ -17,7 +17,7 @@
 		"@astrojs/mdx": "^6.0.3",
 		"@astrojs/sitemap": "^3.7.3",
 		"@iconify-json/mdi": "^1.2.3",
-		"@tailwindcss/vite": "^4.3.0",
+		"@tailwindcss/vite": "^4.3.1",
 		"astro": "^6.4.6",
 		"astro-icon": "^1.1.5",
 		"dayjs": "^1.11.21",
