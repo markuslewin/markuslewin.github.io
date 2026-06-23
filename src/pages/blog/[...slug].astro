@@ -1,5 +1,7 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content'
+import { execSync } from 'child_process'
+import readingTime from 'reading-time'
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro'
 
 export async function getStaticPaths() {
@@ -15,14 +17,33 @@ type Props = {
 }
 
 const { post } = Astro.props
-const { Content, remarkPluginFrontmatter, headings } = await render(post)
+const { Content, headings } = await render(post)
+
+let minutesRead
+if (typeof post.body === 'string') {
+	minutesRead = readingTime(post.body).text
+} else {
+	// eslint-disable-next-line no-console
+	console.warn(`Could not estimate reading time for post ${post.id}`)
+}
+
+let lastModified
+if (typeof post.filePath === 'string') {
+	lastModified = execSync(
+		`git log -1 --pretty="format:%cI" "${post.filePath}"`
+	).toString()
+} else {
+	// eslint-disable-next-line no-console
+	console.warn(`Could not get last modified date for post ${post.id}`)
+}
 ---
 
 <BlogPostLayout
 	{...post.data}
 	headings={headings}
 	slug={post.id}
-	remarkPluginFrontmatter={remarkPluginFrontmatter}
+	minutesRead={minutesRead}
+	lastModified={lastModified}
 >
 	<Content />
 </BlogPostLayout>

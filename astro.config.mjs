@@ -1,11 +1,9 @@
-import { defineConfig, fontProviders } from 'astro/config'
-import tailwindcss from '@tailwindcss/vite'
 import mdx from '@astrojs/mdx'
-import sitemap from '@astrojs/sitemap'
 import partytown from '@astrojs/partytown'
+import sitemap from '@astrojs/sitemap'
+import tailwindcss from '@tailwindcss/vite'
 import icon from 'astro-icon'
-import { remarkReadingTime } from './src/plugins/remark-reading-time.mjs'
-import { remarkModifiedTime } from './src/plugins/remark-modified-time.mjs'
+import { defineConfig, fontProviders } from 'astro/config'
 
 // https://astro.build/config
 export default defineConfig({
@@ -34,8 +32,5 @@ export default defineConfig({
 	],
 	vite: {
 		plugins: [tailwindcss()],
-	},
-	markdown: {
-		remarkPlugins: [remarkReadingTime, remarkModifiedTime],
 	},
 })

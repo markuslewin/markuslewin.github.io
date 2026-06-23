@@ -15,7 +15,8 @@ dayjs.extend(utc)
 type Props = CollectionEntry<'blog'>['data'] & {
 	headings: MarkdownHeading[]
 	slug: string
-	remarkPluginFrontmatter: Record<string, string>
+	minutesRead?: string
+	lastModified?: string
 }
 
 const {
@@ -26,7 +27,8 @@ const {
 	coverImageCredit,
 	headings,
 	slug,
-	remarkPluginFrontmatter,
+	minutesRead,
+	lastModified,
 } = Astro.props
 
 const blogImages = import.meta.glob<{ default: ImageMetadata }>(
@@ -34,10 +36,6 @@ const blogImages = import.meta.glob<{ default: ImageMetadata }>(
 )
 
 const coverImagePath = `/src/assets/blogimages/${slug}/cover.jpg`
-
-const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
-	.utc()
-	.format('D MMM YYYY')
 ---
 
 <BaseLayout title={`${title} | ${SITE_TITLE}`} description={description}>
@@ -83,7 +81,7 @@ const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
 							name="mdi:clock-time-four-outline"
 							class="inline-block text-primary dark:text-primary-dark"
 						/>
-						{remarkPluginFrontmatter.minutesRead}
+						{minutesRead}
 					</p>
 				</div>
 
@@ -121,7 +119,7 @@ const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
 					Suggest an edit
 				</a>
 				<p class="opacity-70">
-					Last modified: {lastModified}
+					Last modified: {dayjs(lastModified).utc().format('D MMM YYYY')}
 				</p>
 			</footer>
 		</section>
