@@ -58,7 +58,7 @@ const coverImagePath = `/src/assets/blogimages/${slug}/cover.jpg`
 						<Icon
 							name="mdi:calendar-month-outline"
 							class="inline-block text-primary dark:text-primary-dark"
-						/>
+						/>{' '}
 						<FormattedDate date={publishedAt} />
 					</p>
 
@@ -69,7 +69,7 @@ const coverImagePath = `/src/assets/blogimages/${slug}/cover.jpg`
 								<Icon
 									name="mdi:calendar-refresh-outline"
 									class="inline-block text-primary dark:text-primary-dark"
-								/>
+								/>{' '}
 								Last updated on <FormattedDate date={updatedDate} />
 							</p>
 						)
@@ -80,7 +80,7 @@ const coverImagePath = `/src/assets/blogimages/${slug}/cover.jpg`
 						<Icon
 							name="mdi:clock-time-four-outline"
 							class="inline-block text-primary dark:text-primary-dark"
-						/>
+						/>{' '}
 						{minutesRead}
 					</p>
 				</div>
@@ -115,7 +115,7 @@ const coverImagePath = `/src/assets/blogimages/${slug}/cover.jpg`
 					href={`https://github.com/markuslewin/markuslewin.github.io/edit/main/src/content/blog/${slug}.md`}
 					rel="noreferrer"
 					class="hover:underline underline-offset-4 opacity-70 hover:opacity-100"
-					><Icon name="mdi:pencil-outline" class="inline-block" />
+					><Icon name="mdi:pencil-outline" class="inline-block" />{' '}
 					Suggest an edit
 				</a>
 				<p class="opacity-70">
